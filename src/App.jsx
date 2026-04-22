@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import Map from "./components/Map";
+import MapView from "./components/Map";
 import Rail from "./components/Rail";
 import Drawer from "./components/Drawer";
 import Auth from "./components/Auth";
@@ -361,7 +361,7 @@ export default function App() {
     return (
       <div style={{ position: "fixed", inset: 0, background: "var(--bg)" }}>
         <div style={{ position: "absolute", inset: 0 }}>
-          <Map places={places} selectedId={selectedId} onSelectPlace={handleSelectPlace} onMapClick={handleMapClick} onBoundsChange={setMapBounds} />
+          <MapView places={places} selectedId={selectedId} onSelectPlace={handleSelectPlace} onMapClick={handleMapClick} onBoundsChange={setMapBounds} />
         </div>
 
         <MobileTopBar search={search} setSearch={setSearch} user={user} onSignIn={() => setShowAuth(true)} onWorldChat={() => { setShowWorldChat((o) => !o); setShowChatBot(false); }} worldChatOpen={showWorldChat} />
@@ -390,7 +390,7 @@ export default function App() {
     <div style={{ position: "fixed", inset: 0, background: "var(--bg)" }}>
       {/* Map background */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-        <Map places={places} selectedId={selectedId} onSelectPlace={handleSelectPlace} onMapClick={handleMapClick} onBoundsChange={setMapBounds} />
+        <MapView places={places} selectedId={selectedId} onSelectPlace={handleSelectPlace} onMapClick={handleMapClick} onBoundsChange={setMapBounds} />
 
         {/* Score legend */}
         <div style={{

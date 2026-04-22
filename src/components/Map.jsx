@@ -9,7 +9,7 @@ function ratingColor(score) {
   return "#ef4444";
 }
 
-export default function Map({ places, selectedId, onSelectPlace, onMapClick, onBoundsChange }) {
+export default function MapView({ places, selectedId, onSelectPlace, onMapClick, onBoundsChange }) {
   const containerRef = useRef(null);
   const mapRef       = useRef(null);
   const markersRef   = useRef(new Map());
